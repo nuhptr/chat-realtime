@@ -1,14 +1,14 @@
-export function login(req, res) {
+export function signup(req, res) {
     try {
-        console.log("Login")
+        const { fullName, username, password, confirmPassword, gender } = req.body
     } catch (error) {
         console.error(error)
     }
 }
 
-export function signup(req, res) {
+export function login(req, res) {
     try {
-        console.log("Signup")
+        console.log("Login")
     } catch (error) {
         console.error(error)
     }
