@@ -1,0 +1,26 @@
+@BASE_URL=http://localhost:8000
+
+### SIGNUP
+POST {{BASE_URL}}/api/auth/signup
+Content-Type: application/json
+
+{
+    "fullName": "Max Mustermann",
+    "username": "max",
+    "password": "password",
+    "confirmPassword": "password",
+    "gender": "female"
+}
+
+
+### LOGIN
+POST {{BASE_URL}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "marie",
+    "password": "password"
+}
+
+### LOGOUT
+POST {{BASE_URL}}/api/auth/logout
