@@ -1,0 +1,11 @@
+@BASE_URL = http://localhost:8000
+
+### SEND MESSAGE to KATALINE
+POST {{BASE_URL}}/api/messages/send/6631caa5b5be761069b3ea6b
+Content-Type: application/json
+# Cookie: login first and get the cookie
+
+
+{
+    "message": "Hello, how are you?"
+}
