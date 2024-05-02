@@ -13,7 +13,6 @@ export async function signup(req, res) {
       }
 
       const user = await User.findOne({ username })
-
       if (user) {
          return res.status(400).json({ message: "Username already exists" })
       }
