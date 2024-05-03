@@ -26,3 +26,26 @@ openssl rand -base64 32
 ```
 
 ## Frontend Dependencies
+
+-  [tailwindcss](https://www.npmjs.com/package/tailwindcss) - bun add -D tailwindcss postcss autoprefixer
+
+### DaisyUI
+
+link - https://www.npmjs.com/package/daisyui
+
+```bash
+bun add -D daisyui
+```
+
+add config to tailwind.config.js
+
+```js
+import daisyui from "daisyui"
+
+module.exports = {
+   theme: {
+      extend: {},
+   },
+   plugins: [require("daisyui")],
+}
+```
