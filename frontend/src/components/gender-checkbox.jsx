@@ -1,5 +1,3 @@
-import React from "react"
-
 export default function GenderCheckbox() {
    return (
       <div className="flex gap-x-2">

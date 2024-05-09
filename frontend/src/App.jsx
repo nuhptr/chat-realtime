@@ -1,5 +1,3 @@
-import React from "react"
-
 import LoginPages from "./pages/login"
 import SignUpPages from "./pages/signup"
 import HomePages from "./pages/home"

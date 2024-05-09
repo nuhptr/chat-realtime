@@ -1,4 +1,3 @@
-import React from "react"
 import GenderCheckbox from "../components/gender-checkbox"
 
 export default function SignUpPages() {

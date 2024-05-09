@@ -1,5 +1,3 @@
-import React from "react"
-
 export default function LoginPages() {
    return (
       <div className="flex flex-col items-center justify-center mx-auto min-w-96">
