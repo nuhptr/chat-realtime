@@ -13,11 +13,9 @@ Building a Chat Realtime App using the MERN stack. Frontend with React and Backe
 -  [nodemon](https://www.npmjs.com/package/nodemon) - bun add -D nodemon
 -  [dotenv](https://www.npmjs.com/package/dotenv) - bun add dotenv
 -  [cookie-parser](https://www.npmjs.com/package/cookie-parser) - bun add cookie-parser
--  [bcryptjs](https://www.npmjs.com/package/bcryptjs) - bun add bcryptjs
--  [@types/bcryptjs](https://www.npmjs.com/package/@types/bcryptjs) - bun add -D @types/bcryptjs
+-  [bcrypt](https://www.npmjs.com/package/bcrypt) - bun add bcrypt
 -  [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) - bun add jsonwebtoken
 -  [mongoose](https://www.npmjs.com/package/mongoose) - bun add mongoose
--  [helmet](https://www.npmjs.com/package/helmet) - bun add helmet
 
 ### Generate Random String For JWT Secret
 
@@ -28,6 +26,12 @@ openssl rand -base64 32
 ## Frontend Dependencies
 
 -  [tailwindcss](https://www.npmjs.com/package/tailwindcss) - bun add -D tailwindcss postcss autoprefixer
+-  [daisyui](https://daisyui.com/) - Tailwind CSS Components
+-  [socket.io](https://socket.io/) - Realtime Engine
+-  [react-icons](https://react-icons.github.io/react-icons/) - Icons for React
+-  [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Routing for React
+-  [react-hot-toast](https://react-hot-toast.com/) - Toast for react
+-  [axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
 
 ### DaisyUI
 
