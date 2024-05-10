@@ -1,4 +1,4 @@
-import bcryptjs from "bcryptjs"
+import bcrypt from "bcrypt"
 
 import { User } from "../model/user-model.js"
 import { generateTokenAndSetCookie } from "../lib/generate-token.js"
@@ -18,8 +18,7 @@ export async function signup(req, res) {
       }
 
       //* Hashing the password
-      const salt = await bcryptjs.genSalt(10)
-      const hashPassword = await bcryptjs.hash(password, salt)
+      const hashPassword = await bcrypt.hash(password, 10)
 
       //* https://avatar.iran.liara.run
       const boyPicture = `https://avatar.iran.liara.run/public/boy?username=${username}`
@@ -48,7 +47,7 @@ export async function signup(req, res) {
          res.status(400).json({ message: "Invalid user data" })
       }
    } catch (error) {
-      console.error("Error in Signup Controller: ", error.message)
+      console.error("Error in Signup Controller: ", error)
       res.status(500).json({ error: "Internal Server Error" })
    }
 }
@@ -59,7 +58,7 @@ export async function login(req, res) {
       const { username, password } = req.body
 
       const user = await User.findOne({ username })
-      const isPasswordMatch = await bcryptjs.compare(password, user?.password || "")
+      const isPasswordMatch = await bcrypt.compare(password, user?.password || "")
 
       if (!user || !isPasswordMatch) {
          return res.status(400).json({ message: "Username or Password is incorrect." })
