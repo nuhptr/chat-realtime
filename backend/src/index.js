@@ -1,9 +1,7 @@
 import { web } from "../src/app/web.js"
 import { connectToDb } from "./lib/db.js"
 
-const PORT = process.env.PORT || 8000
-
-web.listen(PORT, () => {
+web.listen(process.env.PORT, () => {
    connectToDb()
-   console.log(`Server is running on port ${PORT}`)
+   console.log(`Server is running on port ${process.env.PORT}`)
 })
