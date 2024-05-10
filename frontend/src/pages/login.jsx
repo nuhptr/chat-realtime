@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function LoginPages() {
    return (
       <div className="flex flex-col items-center justify-center mx-auto min-w-96">
@@ -37,11 +39,11 @@ export default function LoginPages() {
                   </button>
                </div>
 
-               <a
-                  href="#"
+               <Link
+                  to="/signup"
                   className="inline-block w-full mt-2 text-sm text-center text-white hover:underline hover:text-green-600">
                   {"Don't"} have an account? Register
-               </a>
+               </Link>
             </form>
          </div>
       </div>
