@@ -1,7 +1,7 @@
 import express from "express"
 
-import { protectedRoute } from "../middleware/protected-route"
-import { getUsersForSidebar } from "../controller/user-controller"
+import { protectedRoute } from "../middleware/protected-route.js"
+import { getUsersForSidebar } from "../controller/user-controller.js"
 
 export const userRouter = express.Router()
 
