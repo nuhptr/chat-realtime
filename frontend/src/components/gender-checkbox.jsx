@@ -10,7 +10,8 @@ export default function GenderCheckbox({ onCheckboxChange, selectedGender }) {
                <input
                   type="checkbox"
                   name="male"
-                  className="border-white checkbox checked:border-green-500 [--chkbg:theme(colors.green.500)] [--chkfg:white]"
+                  className="border-white checkbox checked:border-green-500 
+                  [--chkbg:theme(colors.green.500)] [--chkfg:white]"
                   checked={selectedGender === "male"}
                   onChange={() => onCheckboxChange("male")}
                />
@@ -25,7 +26,8 @@ export default function GenderCheckbox({ onCheckboxChange, selectedGender }) {
                <span className="text-white label-text">Female</span>
                <input
                   type="checkbox"
-                  className="border-white checkbox checked:border-rose-500 [--chkbg:theme(colors.rose.500)] [--chkfg:white]"
+                  className="border-white checkbox checked:border-rose-500 
+                  [--chkbg:theme(colors.rose.500)] [--chkfg:white]"
                   checked={selectedGender === "female"}
                   onChange={() => onCheckboxChange("female")}
                />
