@@ -6,7 +6,16 @@ Building a Chat Realtime App using the MERN stack. Frontend with React and Backe
 
 ## Features
 
+-  [x] Realtime Chat
+-  [x] Authentication
+-  [x] Online/Offline Status
+-  [x] Check available users
+
 ## Getting Started
+
+-  Update the `.env.example` to `env` file with your MongoDB connection string and JWT secret.
+-  Install the dependencies for the backend and frontend.
+-  Enjoy
 
 ## Backend Dependencies
 
