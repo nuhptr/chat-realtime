@@ -1,8 +1,8 @@
 # Chat Realtime MERN App
 
-Building a Chat Realtime App using the MERN stack. Frontend with React and Backend with Node.js, Express and Socket.io.
+Building a Chat Realtime App using the MERN stack. Frontend with React and Backend with Node.js, Express & Socket.io.
 
-<img width="1440" alt="Tangkapan Layar 2024-05-11 pukul 13 42 37" src="https://github.com/nuhptr/chat-realtime/assets/50306963/d5886e2c-e9e5-4204-abf6-4e213825a0e6">
+<img width="1440" alt="chat-socketio" src="https://github.com/nuhptr/chat-realtime/assets/50306963/bf26f36d-eb27-4ff6-b2ee-8876d812bf4e">
 
 ## Features
 
