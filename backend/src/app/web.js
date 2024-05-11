@@ -7,14 +7,14 @@ import { authRouter } from "../routes/auth-routes.js"
 import { messageRouter } from "../routes/message-routes.js"
 import { userRouter } from "../routes/user-routes.js"
 
-export const web = express()
+import { app } from "./socket/index.js"
 
 dotenv.config()
 
-web.use(cors())
-web.use(express.json()) //* Parse JSON bodiess
-web.use(cookieParser())
+app.use(cors())
+app.use(express.json()) //* Parse JSON bodiess
+app.use(cookieParser())
 
-web.use("/api/auth", authRouter)
-web.use("/api/messages", messageRouter)
-web.use("/api/users", userRouter)
+app.use("/api/auth", authRouter)
+app.use("/api/messages", messageRouter)
+app.use("/api/users", userRouter)
