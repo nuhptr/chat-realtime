@@ -1,3 +1,5 @@
+import { getReceiverSocketId, io } from "../lib/socket.js"
+
 import { Message } from "../model/message-model.js"
 import { Conversation } from "../model/conversation-model.js"
 
@@ -21,10 +23,15 @@ export async function sendMessage(req, res) {
          conversation.messages.push(newMessage._id)
       }
 
-      //* SOCKET IO FUNCTIONALITY WILL GO HERE
-
-      //* This will save the message and conversation in parallel
+      //* THIS WILL SAVE THE MESSAGE AND CONVERSATION IN PARALLEL
       await Promise.all([newMessage.save(), conversation.save()])
+
+      //* SOCKET IO FUNCTIONALITY WILL GO HERE
+      const receiverSocketId = getReceiverSocketId(receiverId)
+      if (receiverSocketId) {
+         // io.to<socket_id>.emit() is used to send events to a specific client
+         io.to(receiverSocketId).emit("newMessage", newMessage)
+      }
 
       res.status(201).json(newMessage)
    } catch (error) {
@@ -40,8 +47,8 @@ export async function getMessages(req, res) {
       const senderId = req.user._id
 
       /**
-       * this will find the conversation between the sender and the receiver
-       * not reference to the messages but the actual messages
+       * THIS WILL FIND THE CONVERSATION BETWEEN THE SENDER AND THE RECEIVER
+       * NOT REFERENCE TO THE MESSAGES BUT THE ACTUAL MESSAGES
        * */
       const conversation = await Conversation.findOne({
          participants: { $all: [senderId, userChatToId] },
