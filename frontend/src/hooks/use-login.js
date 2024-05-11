@@ -3,20 +3,14 @@ import toast from "react-hot-toast"
 import axios from "axios"
 
 import { useAuthContext } from "../context/auth-context"
-import { handleSignupInputErrors } from "../utils/handle-input-error"
+import { handleLoginInputErrors } from "../utils/handle-input-error"
 
-export function useSignup() {
+export function useLogin() {
    const [loading, setLoading] = useState(false)
    const { setAuthUser } = useAuthContext()
 
-   async function signup({ fullName, username, password, confirmPassword, gender }) {
-      const validateInput = handleSignupInputErrors({
-         fullName,
-         username,
-         password,
-         confirmPassword,
-         gender,
-      })
+   async function login(username, password) {
+      const validateInput = handleLoginInputErrors(username, password)
       if (!validateInput) return
 
       try {
@@ -24,16 +18,16 @@ export function useSignup() {
 
          await axios
             .post(
-               "/api/auth/signup",
-               { fullName, username, password, confirmPassword, gender },
+               "/api/auth/login",
+               { username, password },
                { headers: { "Content-Type": "application/json" } }
             )
             .then((response) => {
-               if (response.status === 201) toast.success("Account created successfully.")
-               if (response.status === 400) toast.error("Username already exists.")
+               if (response.status === 200) toast.success("Login successful.")
+               if (response.status === 400) toast.error("Invalid username or password.")
 
                const data = response.data
-               if (!data) throw new Error("Failed to signup.")
+               if (!data) throw new Error("Failed to login.")
 
                // Save user data in local storage
                localStorage.setItem("chat-user", JSON.stringify(data))
@@ -48,5 +42,5 @@ export function useSignup() {
       }
    }
 
-   return { loading, signup }
+   return { loading, login }
 }
