@@ -29,11 +29,12 @@ openssl rand -base64 32
 
 -  [tailwindcss](https://www.npmjs.com/package/tailwindcss) - bun add -D tailwindcss postcss autoprefixer
 -  [daisyui](https://daisyui.com/) - Tailwind CSS Components
--  [socket.io](https://socket.io/) - Realtime Engine
 -  [react-icons](https://react-icons.github.io/react-icons/) - Icons for React
 -  [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Routing for React
 -  [react-hot-toast](https://react-hot-toast.com/) - Toast for react
 -  [axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
+-  [zustand](https://www.npmjs.com/package/zustand) - State management for React
+-  [socket.io-client](https://www.npmjs.com/package/socket.io-client) - Socket.io client for React
 
 ### DaisyUI
 
