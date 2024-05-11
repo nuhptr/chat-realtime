@@ -6,7 +6,7 @@ export function generateTokenAndSetCookie(userId, res) {
    res.cookie("jwt", token, {
       maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
       httpOnly: true, // Prevent XSS cookie access from client side JavaScript
-      sameSite: true, // CSRF protection
+      sameSite: "strict", // CSRF protection
       secure: process.env.NODE_ENV !== "development", // HTTPS only in production
    })
 }
