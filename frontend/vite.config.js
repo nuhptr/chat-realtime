@@ -11,7 +11,6 @@ export default defineConfig({
          // Proxy /api/auth/signup to http://localhost:8000/api/auth/signup
          "/api": {
             target: "http://localhost:8000",
-            changeOrigin: true,
          },
       },
    },
